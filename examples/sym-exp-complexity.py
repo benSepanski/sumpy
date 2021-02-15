@@ -1,6 +1,6 @@
 import numpy as np
 import pyopencl as cl
-import loopy as lp
+import loopyy as lp
 from sumpy.kernel import LaplaceKernel, HelmholtzKernel
 from sumpy.expansion.local import (
         LaplaceConformingVolumeTaylorLocalExpansion,

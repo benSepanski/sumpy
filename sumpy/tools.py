@@ -39,8 +39,8 @@ import sumpy.symbolic as sym
 import pyopencl as cl
 import pyopencl.array  # noqa
 
-import loopy as lp
-from loopy.version import MOST_RECENT_LANGUAGE_VERSION
+import loopyy as lp
+from loopyy.version import MOST_RECENT_LANGUAGE_VERSION
 
 import logging
 logger = logging.getLogger(__name__)
@@ -269,7 +269,7 @@ class KernelComputation:
         from sumpy.symbolic import SympyToPymbolicMapper
         sympy_conv = SympyToPymbolicMapper()
 
-        import loopy as lp
+        import loopyy as lp
         return [
                 lp.Assignment(id=None,
                     assignee="knl_%d_scaling" % i,
@@ -608,12 +608,12 @@ class KernelCacheWrapper:
         from sumpy import code_cache, CACHING_ENABLED, OPT_ENABLED
 
         if CACHING_ENABLED:
-            import loopy.version
+            import loopyy.version
             from sumpy.version import KERNEL_VERSION
             cache_key = (
                     self.get_cache_key()
                     + tuple(sorted(kwargs.items()))
-                    + (loopy.version.DATA_MODEL_VERSION,)
+                    + (loopyy.version.DATA_MODEL_VERSION,)
                     + (KERNEL_VERSION,)
                     + (OPT_ENABLED,))
 

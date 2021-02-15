@@ -24,8 +24,8 @@ THE SOFTWARE.
 """
 
 import numpy as np
-import loopy as lp
-from loopy.version import MOST_RECENT_LANGUAGE_VERSION
+import loopyy as lp
+from loopyy.version import MOST_RECENT_LANGUAGE_VERSION
 from pymbolic import var
 
 from sumpy.tools import (

@@ -24,14 +24,14 @@ THE SOFTWARE.
 import numpy as np
 import pyopencl as cl
 import pyopencl.tools  # noqa
-import loopy as lp
+import loopyy as lp
 
 import re
 
 from pymbolic.mapper import IdentityMapper, WalkMapper, CSECachingMapperMixin
 import pymbolic.primitives as prim
 
-from loopy.types import NumpyType
+from loopyy.types import NumpyType
 
 from pytools import memoize_method
 
@@ -82,7 +82,7 @@ def make_one_step_subst(assignments):
     # Ensure no re-assignments.
     assert len(unwanted_vars) == len(assignments)
 
-    from loopy.symbolic import get_dependencies
+    from loopyy.symbolic import get_dependencies
     unwanted_deps = {
         name: get_dependencies(value) & unwanted_vars
         for name, value in assignments.items()}
@@ -241,7 +241,7 @@ hank1_01_result hank1_01_complex(cdouble_t z)
 
 
 def bessel_preamble_generator(preamble_info):
-    from loopy.target.pyopencl import PyOpenCLTarget
+    from loopyy.target.pyopencl import PyOpenCLTarget
     if not isinstance(preamble_info.kernel.target, PyOpenCLTarget):
         raise NotImplementedError("Only the PyOpenCLTarget is supported as of now")
 
@@ -277,7 +277,7 @@ def bessel_mangler(kernel, identifier, arg_dtypes):
     See argument *function_manglers* to :func:`loopy.make_kernel`.
     """
 
-    from loopy.target.pyopencl import PyOpenCLTarget
+    from loopyy.target.pyopencl import PyOpenCLTarget
     if not isinstance(kernel.target, PyOpenCLTarget):
         raise NotImplementedError("Only the PyOpenCLTarget is supported as of now")
 
@@ -538,7 +538,7 @@ class FractionKiller(CSECachingMapperMixin, IdentityMapper):
 
 # {{{ convert big integers into floats
 
-from loopy.tools import is_integer
+from loopyy.tools import is_integer
 
 
 class BigIntegerKiller(CSECachingMapperMixin, IdentityMapper):
@@ -721,7 +721,7 @@ def to_loopy_insns(assignments, vector_names=set(), pymbolic_expr_maps=[],
             expr = m(expr)
         return expr
 
-    import loopy as lp
+    import loopyy as lp
     from pytools import MinRecursionLimit
     with MinRecursionLimit(3000):
         result = [

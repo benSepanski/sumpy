@@ -25,8 +25,8 @@ THE SOFTWARE.
 
 
 import numpy as np
-import loopy as lp
-from loopy.version import MOST_RECENT_LANGUAGE_VERSION
+import loopyy as lp
+from loopyy.version import MOST_RECENT_LANGUAGE_VERSION
 import sumpy.symbolic as sym
 from pytools import memoize_method
 from pymbolic import parse, var

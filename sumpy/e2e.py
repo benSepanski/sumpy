@@ -21,10 +21,10 @@ THE SOFTWARE.
 """
 
 import numpy as np
-import loopy as lp
+import loopyy as lp
 import sumpy.symbolic as sym
 
-from loopy.version import MOST_RECENT_LANGUAGE_VERSION
+from loopyy.version import MOST_RECENT_LANGUAGE_VERSION
 from sumpy.tools import KernelCacheWrapper
 
 import logging

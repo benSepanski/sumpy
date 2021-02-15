@@ -28,7 +28,7 @@ from numbers import Number
 from sumpy.kernel import TargetDerivativeRemover
 
 import numpy as np  # noqa: F401
-import loopy as lp  # noqa: F401
+import loopyy as lp  # noqa: F401
 import pyopencl as cl
 
 import logging

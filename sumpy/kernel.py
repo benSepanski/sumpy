@@ -21,7 +21,7 @@ THE SOFTWARE.
 """
 
 
-import loopy as lp
+import loopyy as lp
 import numpy as np
 from pymbolic.mapper import IdentityMapper, CSECachingMapperMixin
 from sumpy.symbolic import pymbolic_real_norm_2
